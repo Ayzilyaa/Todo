@@ -1,0 +1,33 @@
+﻿<Window x:Class="Desktop.Registration"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop"
+        mc:Ignorable="d"
+        Title="Log in" Height="600" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Welcome back" FontSize="32         " HorizontalAlignment="Right" Margin="0,66,173,0" VerticalAlignment="Top"/>
+        <Label Content="Почта" FontSize ="20"  HorizontalAlignment="Left" Margin="412,199,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" FontSize ="20" HorizontalAlignment="Left" Margin="412,280,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,235,0,0" TextWrapping="Wrap" Text="Введите почту" VerticalAlignment="Top" Width="266" Height="24" 
+            FontSize="16" Foreground="Gray" />
+        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" Text="Введите пароль&#xA;" Height="24" 
+            FontSize="15"    Foreground="Gray"/>
+
+        <Button Style="{StaticResource RoundBut}" 
+            Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="412,460,0,0" VerticalAlignment="Top" Width="327" Height="37"  BorderBrush="White" FontSize="18 "/>
+        <Button Style="{StaticResource RoundBut}" 
+            Content="Назад" HorizontalAlignment="Left" Margin="412,504,0,0" VerticalAlignment="Top" Width="327" Height="37" BorderBrush="White" FontSize="18 "/>
+
+
+        <Label Content="Повторите пароль" FontSize ="20" HorizontalAlignment="Left" Margin="412,358,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,396,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" Text="Повторите пароль&#xA;" Height="24" 
+    FontSize="15"    Foreground="Gray"/>
+
+        <Label Content="Имя пользователя" FontSize ="20" HorizontalAlignment="Left" Margin="412,126,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" Text="Введите имя пользователя пароль&#xA;" Height="24" 
+    FontSize="15"    Foreground="Gray"/>
+        <Image Margin="43,35,487,292" Source="/logo.png" Stretch="Fill"/>
+    </Grid>
+</Window>

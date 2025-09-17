@@ -1,0 +1,28 @@
+﻿<Window x:Class="Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Desktop"
+        mc:Ignorable="d"
+        Title="Log in" Height="600" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Добро пожаловать!" FontSize="32
+               " HorizontalAlignment="Right" Margin="0,66,69,0" VerticalAlignment="Top"/>
+        <Label Content="Почта" FontSize ="20"  HorizontalAlignment="Left" Margin="412,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Пароль" FontSize ="20" HorizontalAlignment="Left" Margin="412,280,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,236,0,0" TextWrapping="Wrap" Text="pangcheo121o@gmail.com" VerticalAlignment="Top" Width="266" Height="24" TextChanged="TextBox_TextChanged_1"
+                 FontSize="16" />
+        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" Text="Введите пароль&#xD;&#xA;" Height="24" 
+                 FontSize="15"  TextChanged="TextBox_TextChanged"  Foreground="Gray"/>
+        <Label Content="Восстановить пароль" HorizontalAlignment="Left" Margin="545,390,0,0" VerticalAlignment="Top" FontSize="18" />
+        <Button Style="{StaticResource RoundBut}" 
+                Content="Войти" HorizontalAlignment="Left" Margin="412,438,0,0" VerticalAlignment="Top" Width="327" Height="37"  BorderBrush="White" FontSize="18 "/>
+        <Button Style="{StaticResource RoundBut}" 
+                Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="412,482,0,0" VerticalAlignment="Top" Width="327" Height="37" BorderBrush="White" FontSize="18 "/>
+      
+        <Image Margin="43,35,487,292" Source="/logo.png" Stretch="Fill"/>
+
+
+    </Grid>
+</Window>
