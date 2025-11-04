@@ -6,23 +6,28 @@
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
         Title="Log in" Height="700" Width="800" ResizeMode="NoResize">
-    <Grid>
-        <Label Content="Добро пожаловать!" FontSize="32
-               " HorizontalAlignment="Right" Margin="0,66,69,0" VerticalAlignment="Top"/>
-        <Label Content="Почта" FontSize ="20"  HorizontalAlignment="Left" Margin="412,200,0,0" VerticalAlignment="Top"/>
-        <Label Content="Пароль" FontSize ="20" HorizontalAlignment="Left" Margin="412,280,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,236,0,0" TextWrapping="Wrap" Text="pangcheo121o@gmail.com" VerticalAlignment="Top" Width="266" Height="24" TextChanged="TextBox_TextChanged_1"
-                 FontSize="16" />
-        <TextBox HorizontalAlignment="Left" BorderBrush="White" Margin="412,318,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="266" Text="Введите пароль&#xD;&#xA;" Height="24" 
-                 FontSize="15"  TextChanged="TextBox_TextChanged"  Foreground="Gray"/>
-        <Label Content="Восстановить пароль" HorizontalAlignment="Left" Margin="545,390,0,0" VerticalAlignment="Top" FontSize="18" />
-        <Button Style="{StaticResource RoundBut}" 
-                Content="Войти" HorizontalAlignment="Left" Margin="412,438,0,0" VerticalAlignment="Top" Width="327" Height="37"  BorderBrush="White" FontSize="18 "/>
-        <Button Style="{StaticResource RoundBut}" 
-                Content="Зарегестрироваться" HorizontalAlignment="Left" Margin="412,482,0,0" VerticalAlignment="Top" Width="327" Height="37" BorderBrush="White" FontSize="18 "/>
-      
-        <Image Margin="43,35,487,292" Source="/logo.png" Stretch="Fill"/>
-
+    <Grid Margin="0,0,0,-6">
+        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="380,49,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="Почта" HorizontalAlignment="Left" Margin="380,168,0,0" VerticalAlignment="Top" FontSize="22"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="380,287,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.552,2.51"/>
+        <TextBox x:Name="Почта" HorizontalAlignment="Left" Margin="380,223,0,0" TextWrapping="Wrap" Text="pangcheo0210@gmail.com&#xD;&#xA;" VerticalAlignment="Top" Width="337" FontSize="18" BorderThickness="0,0,0,1" Foreground="#FF928B8B"/>
+        <Image HorizontalAlignment="Left" Height="182" Margin="54,49,0,0" VerticalAlignment="Top" Width="190" Source="/logo.png"/>
+        <Button Content="Войти" HorizontalAlignment="Left" Margin="380,448,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="0.5,0.5" FontSize="22" Width="337" Height="50" Foreground="#FFFEFEFE" Background="#FFEA5656" BorderBrush="White">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="15 15 5 5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button Content="Регистрация" HorizontalAlignment="Left" Margin="380,508,0,0" VerticalAlignment="Top" FontSize="22" Width="337" Height="50" Background="#FFEA5656" Foreground="White" BorderBrush="White" Click="Button_Click_1">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5 5 15 15"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <TextBox x:Name="Password"  HorizontalAlignment="Left" Margin="380,339,0,0" TextWrapping="Wrap" Text="Введите пароль&#xD;&#xA;" VerticalAlignment="Top" Width="337" FontSize="18" BorderThickness="0,0,0,1" Foreground="#FF928B8B" />
+        <Label Content="Восстановить пароль" HorizontalAlignment="Left" Margin="531,393,0,0" VerticalAlignment="Top" FontSize="18"/>
 
     </Grid>
 </Window>
