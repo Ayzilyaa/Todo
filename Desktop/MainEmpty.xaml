@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainEmpty" Height="640" Width="800">
     <Grid>
-        <Image x:Name="Photo" HorizontalAlignment="Left" Height="89" Margin="10,39,0,0" VerticalAlignment="Top" Width="104" MouseLeftButtonDown="Photo_MouseLeftButtonDown" >
+        <Image x:Name="Photo" HorizontalAlignment="Left" Height="90" Margin="10,39,0,0" VerticalAlignment="Top" Width="104" MouseLeftButtonDown="Photo_MouseLeftButtonDown" >
             <Image.ContextMenu>
                 <ContextMenu x:Name="Menu">
                     <MenuItem Header="Выход" Click="Exit_Click" />
