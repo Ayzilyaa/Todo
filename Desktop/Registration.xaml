@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
-        Title="Log in" Height="600" Width="800" ResizeMode="NoResize">
+        Title="Log in" Height="620" Width="800" ResizeMode="NoResize">
     <Grid>
         <Image HorizontalAlignment="Left" Height="182" Margin="54,49,0,0" VerticalAlignment="Top" Width="190" Source="/logo.png"/>
         <Label Content="Welcome back" HorizontalAlignment="Left" Margin="357,31,0,0" VerticalAlignment="Top" FontSize="32" Width="242"/>
