@@ -12,14 +12,14 @@
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="380,287,0,0" VerticalAlignment="Top" FontSize="22" RenderTransformOrigin="0.552,2.51"/>
         <TextBox x:Name="Почта" HorizontalAlignment="Left" Margin="380,223,0,0" TextWrapping="Wrap" Text="pangcheo0210@gmail.com&#xD;&#xA;" VerticalAlignment="Top" Width="337" FontSize="18" BorderThickness="0,0,0,1" Foreground="#FF928B8B"/>
         <Image HorizontalAlignment="Left" Height="182" Margin="54,49,0,0" VerticalAlignment="Top" Width="190" Source="/logo.png"/>
-        <Button Content="Войти" HorizontalAlignment="Left" Margin="380,448,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="0.5,0.5" FontSize="22" Width="337" Height="50" Foreground="#FFFEFEFE" Background="#FFEA5656" BorderBrush="White">
+        <Button Content="Войти" HorizontalAlignment="Left" Margin="380,448,0,0" VerticalAlignment="Top" Click="Button_Click" RenderTransformOrigin="0.5,0.5" FontSize="22" Width="337" Height="50" Foreground="#FFFEFEFE" Background="#FF0000" BorderBrush="White">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="15 15 5 5"/>
                 </Style>
             </Button.Resources>
         </Button>
-        <Button Content="Регистрация" HorizontalAlignment="Left" Margin="380,508,0,0" VerticalAlignment="Top" FontSize="22" Width="337" Height="50" Background="#FFEA5656" Foreground="White" BorderBrush="White" Click="Button_Click_1">
+        <Button Content="Регистрация" HorizontalAlignment="Left" Margin="380,508,0,0" VerticalAlignment="Top" FontSize="22" Width="337" Height="50" Background="#FF0000" Foreground="White" BorderBrush="White" Click="Button_Click_1">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="5 5 15 15"/>
