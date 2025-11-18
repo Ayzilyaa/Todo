@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
-        Title="MainEmpty" Height="640" Width="800">
+        Title="MainEmpty" Height="620" Width="800">
     <Grid>
-        <Image x:Name="Photo" HorizontalAlignment="Left" Height="90" Margin="10,39,0,0" VerticalAlignment="Top" Width="104" MouseLeftButtonDown="Photo_MouseLeftButtonDown" >
+        <Image x:Name="Photo" HorizontalAlignment="Left" Height="118" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" MouseLeftButtonDown="Photo_MouseLeftButtonDown" Source="/logo1.png">
             <Image.ContextMenu>
                 <ContextMenu x:Name="Menu">
                     <MenuItem Header="Выход" Click="Exit_Click" />
@@ -15,12 +15,12 @@
                 </ContextMenu>
             </Image.ContextMenu>
         </Image>
-        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="164,70,0,0" VerticalAlignment="Top" FontSize="36"/>
-        <Label Content="Создайте свою первую&#xD;&#xA;задачу!" HorizontalAlignment="Left" Margin="164,168,0,0" VerticalAlignment="Top" FontSize="36" Width="529"/>
-        <Button Content="Создать первую задачу" HorizontalAlignment="Center" Margin="0,344,0,0" VerticalAlignment="Top" Background="#FFEA5656" FontSize="20" Click="Button_Click" Foreground="White" Height="74" Width="311" BorderBrush="White">
+        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="164,106,0,0" VerticalAlignment="Top" FontSize="40"/>
+        <Label Content="Создайте свою первую&#xD;&#xA;задачу!" HorizontalAlignment="Left" Margin="164,196,0,0" VerticalAlignment="Top" FontSize="40" Width="529"/>
+        <Button Content="Создать первую задачу" HorizontalAlignment="Center" Margin="0,378,0,0" VerticalAlignment="Top" Background="#FF0000" FontSize="26" Click="Button_Click" Foreground="White" Height="69" Width="324" BorderBrush="White">
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="7 7 7 7"/>
+                    <Setter Property="CornerRadius" Value="9,9,9,9"/>
                 </Style>
             </Button.Resources>
         </Button>

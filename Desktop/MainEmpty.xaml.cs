@@ -28,5 +28,18 @@ namespace Desktop
         {
 
         }
+        private void Photo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Photo.ContextMenu.IsOpen = true;
+        }
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ChangeProfilePhoto_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

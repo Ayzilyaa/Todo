@@ -34,5 +34,19 @@ namespace Desktop
         {
 
         }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var MainEmpty = new MainEmpty();
+            MainEmpty.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var Registration = new Registration();
+            Registration.Show();
+            this.Close();
+        }
     }
 }
+
