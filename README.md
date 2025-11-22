@@ -14,7 +14,4 @@
 
 ## Авторы
 
-* **Ипкаева Айзиля **  - [Ayzilyaa](https://github.com/Ayzilyaa/Todo.git)
-
-
-* **Сайфуллова Айзиля**  - [Ayzilia](https://github.com/Ayzilia/Todo.git)
+Студентка 314в
