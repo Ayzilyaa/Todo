@@ -16,13 +16,26 @@
                 </Style>
             </Button.Resources>
         </Button>
-        <Image x:Name="Photo" HorizontalAlignment="Left" Height="145" Margin="12,12,0,0" VerticalAlignment="Top" Width="145" MouseLeftButtonDown="Photo_MouseLeftButtonDown" Source="/logo1.png">
-            <Image.ContextMenu>
-                <ContextMenu x:Name="Menu">
-                    <MenuItem Header="Изменить фото профиля" Click="ChangeProfilePhoto_Click"/>
-                    <MenuItem Header="Выход" Click="Exit_Click" />
-                </ContextMenu>
-            </Image.ContextMenu>
-        </Image>
-    </Grid>
+        <Image x:Name="Photo"
+           Width="145" Height="145"
+           Margin="12"
+           Source="/logo1.png"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           MouseLeftButtonDown="Photo_MouseLeftButtonDown"/>
+
+            <!-- Панель (тоже слева, под фото) -->
+            <StackPanel x:Name="MenuPanel"
+                Background="#DDDDDD"
+                Visibility="Collapsed"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="12,160,0,0">
+                <Button Content="Изменить фото профиля"
+                Margin="0 0 0 5"
+                Click="ChangeProfilePhoto_Click"/>
+                <Button Content="Выход"
+                Click="Exit_Click"/>
+            </StackPanel>
+        </Grid>
 </Window>

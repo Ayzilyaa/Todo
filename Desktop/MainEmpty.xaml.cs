@@ -30,7 +30,10 @@ namespace Desktop
         }
         private void Photo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Photo.ContextMenu.IsOpen = true;
+            MenuPanel.Visibility =
+            MenuPanel.Visibility == Visibility.Visible
+            ? Visibility.Collapsed
+            : Visibility.Visible;
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
