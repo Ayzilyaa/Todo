@@ -7,23 +7,34 @@
         mc:Ignorable="d"
         Title="MainEmpty" Height="620" Width="800">
     <Grid>
-        <Image x:Name="Photo" HorizontalAlignment="Left" Height="118" Margin="10,10,0,0" VerticalAlignment="Top" Width="119" MouseLeftButtonDown="Photo_MouseLeftButtonDown" Source="/logo1.png">
-            <Image.ContextMenu>
-                <ContextMenu x:Name="Menu">
-                    <MenuItem Header="Выход" Click="Exit_Click" />
-                    <MenuItem Header="Изменить фото профиля" Click="ChangeProfilePhoto_Click"/>
-                </ContextMenu>
-            </Image.ContextMenu>
-        </Image>
-        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="164,106,0,0" VerticalAlignment="Top" FontSize="40"/>
-        <Label Content="Создайте свою первую&#xD;&#xA;задачу!" HorizontalAlignment="Left" Margin="164,196,0,0" VerticalAlignment="Top" FontSize="40" Width="529"/>
-        <Button Content="Создать первую задачу" HorizontalAlignment="Center" Margin="0,378,0,0" VerticalAlignment="Top" Background="#FF0000" FontSize="26" Click="Button_Click" Foreground="White" Height="69" Width="324" BorderBrush="White">
+        <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="188,150,0,0" VerticalAlignment="Top" FontSize="40" Height="69" Width="391"/>
+        <Label Content="Создайте свою первую&#xD;&#xA;задачу!" HorizontalAlignment="Left" Margin="188,219,0,0" VerticalAlignment="Top" FontSize="40" Width="554" Height="127"/>
+        <Button Content="Создать первую задачу" HorizontalAlignment="Center" Margin="0,366,0,0" VerticalAlignment="Top" Background="#FF0000" FontSize="28" Click="Button_Click" Foreground="White" Height="69" Width="388" BorderBrush="White">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="9,9,9,9"/>
                 </Style>
             </Button.Resources>
         </Button>
+        <Image x:Name="Photo"
+           Width="145" Height="145"
+           Margin="12"
+           Source="/logo1.png"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           MouseLeftButtonDown="Photo_MouseLeftButtonDown"/>
 
+        <StackPanel x:Name="MenuPanel"
+                Background="#DDDDDD"
+                Visibility="Collapsed"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Margin="12,160,0,0">
+            <Button Content="Изменить фото профиля"
+                Margin="0 0 0 5"
+                Click="ChangeProfilePhoto_Click"/>
+            <Button Content="Выход"
+                Click="Exit_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
