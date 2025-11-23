@@ -19,14 +19,17 @@ namespace Desktop
     /// </summary>
     public partial class Registration : Window
     {
+        UserRepository UR = new UserRepository();
+        Class Validate = new Class();
         public Registration()
         {
             InitializeComponent();
         }
-    private void Имя_TextChanged(object sender, TextChangedEventArgs e)
+
+        private void Имя_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Имя.Text == "Введите имя пользователя") { Имя.Foreground = this.Foreground; }
-            else if (Имя.Text == "Имя не должно быть меньше 3 символов") { Имя.Foreground = Brushes.Red; }
+            if (Имя.Text == "введите имя пользователя") { Имя.Foreground = this.Foreground; }
+            else if (Имя.Text == "имя не должно быть меньше трех символов") { Имя.Foreground = Brushes.Red; }
             else Имя.Foreground = Brushes.Black;
         }
         private void EmailValidation(object sender, RoutedEventArgs e)
@@ -34,7 +37,7 @@ namespace Desktop
             TextBox txt = (TextBox)sender;
             if (!Class.ValidateEmail(txt.Text))
             {
-                Class.ShowError(txt, "Неверный формат почты");
+                Class.ShowError(txt, "неверный формат почты");
             }
         }
 
@@ -43,7 +46,7 @@ namespace Desktop
             TextBox txt = (TextBox)sender;
             if (!Class.ValidatePassword(txt.Text))
             {
-                Class.ShowError(txt, "Пароль не должен быть меньше 6 символов");
+                Class.ShowError(txt, "пароль не должен быть меньше шести символов");
             }
         }
 
@@ -52,11 +55,11 @@ namespace Desktop
             TextBox txt = (TextBox)sender;
             if (!Class.ValidateName(txt.Text))
             {
-                Class.ShowError(txt, "Имя не должно быть меньше 3 символов");
+                Class.ShowError(txt, "имя не должно быть меньше трех символов");
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BackToLogIn(object sender, RoutedEventArgs e)
         {
             var LogIn = new MainWindow();
             LogIn.Show();
@@ -64,39 +67,48 @@ namespace Desktop
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Registation(object sender, RoutedEventArgs e)
         {
-            if (Имя.Text == "Имя не должно быть меньше 3 символов" || Имя.Text == "Введите имя пользователя") { MessageBox.Show("Неверно введены данные"); }
-            else if (Пароль.Text == "Пароль не должен быть меньше 6 символов" || Пароль.Text == "Введите пароль") { MessageBox.Show("Неверно введены данные"); }
-            else if (email.Text == "Неверный формат почты" || email.Text == "exam@yandex.ru") { MessageBox.Show("Неверно введены данные"); }
-            else if (Повтор.Text == "Повторите пароль") { MessageBox.Show("Неверно введены данные"); }
+            string email = TBEmail.Text.Trim().ToLower();
+            string password = Пароль.Text.Trim();
+            string repeatPassword = Повтор.Text.Trim();
+            string login = Имя.Text.Trim();
+
+            if (Имя.Text == "имя не должно быть меньше трех символов" || Имя.Text == "введите имя пользователя") { MessageBox.Show("неверно введены данные"); }
+            else if (Пароль.Text == "пароль не должен быть меньше шести символов" || Пароль.Text == "введите пароль") { MessageBox.Show("неверно введены данные"); }
+            else if (TBEmail.Text == "неверный формат почты" || TBEmail.Text == "ayz@yandex.ru") { MessageBox.Show("неверно введены данные"); }
+            else if (Повтор.Text == "повторите пароль") { MessageBox.Show("неверно введены данные"); }
+            else if (UR.UserRegistration(login, password, email))
+            {
+                MainEmpty main_Empty = new MainEmpty();
+                main_Empty.Show();
+                this.Close();
+            }
             else
             {
-                var MainEmpty = new MainEmpty();
-                MainEmpty.Show();
-                this.Close();
+                return;
             }
 
         }
 
         private void email_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (email.Text == "exam@yandex.ru") { email.Foreground = this.Foreground; }
-            else if (email.Text == "Неверный формат почты") { email.Foreground = Brushes.Red; }
-            else email.Foreground = Brushes.Black;
+            if (TBEmail.Text == "ayz@yandex.ru") { TBEmail.Foreground = this.Foreground; }
+            else if (TBEmail.Text == "неверный формат почты") { TBEmail.Foreground = Brushes.Red; }
+            else TBEmail.Foreground = Brushes.Black;
         }
 
         private void Пароль_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (Пароль.Text == "Введите пароль") { Пароль.Foreground = this.Foreground; }
-            else if (Пароль.Text == "Пароль не должен быть меньше 6 символов") { Пароль.Foreground = Brushes.Red; }
+            if (Пароль.Text == "введите пароль") { Пароль.Foreground = this.Foreground; }
+            else if (Пароль.Text == "пароль не должен быть меньше шести символов") { Пароль.Foreground = Brushes.Red; }
             else Пароль.Foreground = Brushes.Black;
         }
 
         private void Повтор_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (Повтор.Text != Пароль.Text) { }
-            if (Повтор.Text == "Повторите пароль") { Повтор.Foreground = this.Foreground; }
+            if (Повтор.Text == "повторите пароль") { Повтор.Foreground = this.Foreground; }
             else Повтор.Foreground = Brushes.Black;
         }
     }
