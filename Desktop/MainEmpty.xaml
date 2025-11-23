@@ -24,7 +24,6 @@
            VerticalAlignment="Top"
            MouseLeftButtonDown="Photo_MouseLeftButtonDown"/>
 
-            <!-- Панель (тоже слева, под фото) -->
             <StackPanel x:Name="MenuPanel"
                 Background="#DDDDDD"
                 Visibility="Collapsed"
