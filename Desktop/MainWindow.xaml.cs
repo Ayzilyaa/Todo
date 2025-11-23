@@ -16,9 +16,6 @@ using static Desktop.Class;
 
 namespace Desktop
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         UserRepository UR = new UserRepository();
@@ -27,7 +24,7 @@ namespace Desktop
         public MainWindow()
         {
             InitializeComponent();
-            UR.UserRegistration("AYZILYA", "1234567", "ayzilya@gmail.com");
+            UR.UserRegistration("AYZILYA", "04052007", "ayzilya@gmail.com");
         }
 
         private void LogIn(object sender, RoutedEventArgs e)
@@ -39,13 +36,13 @@ namespace Desktop
 
             if (!Class.ValidateEmail(email))
             {
-                MessageBox.Show("Некорректный email.", "Ошибка");
+                MessageBox.Show("некорректая почта.", "ошибка");
                 return;
             }
 
             if (!Class.ValidatePassword(password))
             {
-                MessageBox.Show("Пароль должен содержать минимум 6 символов.", "Ошибка");
+                MessageBox.Show("пароль должен содержать шесть символов.", "ошибка");
                 return;
             }
             try
@@ -57,7 +54,7 @@ namespace Desktop
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Ошибка");
+                MessageBox.Show(ex.Message, "ошибка");
                 return;
             }
         }
@@ -71,7 +68,7 @@ namespace Desktop
 
         private void TBEmail_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (TBEmail.Text == "Почта")
+            if (TBEmail.Text == "почта")
             {
                 TBEmail.Text = string.Empty;
             }
@@ -84,6 +81,13 @@ namespace Desktop
                 TBEmail.Text = "Почта";
             }
         }
+        private void TBPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TBPassword.Text == "Пароль")
+            {
+                TBPassword.Text = string.Empty;
+            }
+        }
 
         private void TBPassword_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -92,13 +96,7 @@ namespace Desktop
                 TBPassword.Text = "Пароль";
             }
         }
-        private void TBPassword_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (TBPassword.Text == "Пароль")
-            {
-                TBPassword.Text = string.Empty;
-            }
-        }
+        
     }
 }
 

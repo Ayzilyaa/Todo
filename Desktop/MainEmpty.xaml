@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Добро пожаловать!" HorizontalAlignment="Left" Margin="188,150,0,0" VerticalAlignment="Top" FontSize="40" Height="69" Width="391"/>
         <Label Content="Создайте свою первую&#xD;&#xA;задачу!" HorizontalAlignment="Left" Margin="188,219,0,0" VerticalAlignment="Top" FontSize="40" Width="554" Height="127"/>
-        <Button Content="Создать первую задачу" HorizontalAlignment="Center" Margin="0,422,0,0" VerticalAlignment="Top" Background="#FF0000" FontSize="26" Click="Button_Click" Foreground="White" Height="69" Width="324" BorderBrush="White">
+        <Button Content="Создать первую задачу" HorizontalAlignment="Center" Margin="0,422,0,0" VerticalAlignment="Top" Background="#FF0000" FontSize="28" Click="Button_Click" Foreground="White" Height="69" Width="389" BorderBrush="White">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="9,9,9,9"/>
