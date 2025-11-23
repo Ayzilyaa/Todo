@@ -23,7 +23,7 @@ namespace Desktop
         {
             InitializeComponent();
         }
-    private void Имя_TextChanged(object sender, TextChangedEventArgs e)
+        private void Имя_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (Имя.Text == "Введите имя пользователя") { Имя.Foreground = this.Foreground; }
             else if (Имя.Text == "Имя не должно быть меньше 3 символов") { Имя.Foreground = Brushes.Red; }
@@ -101,4 +101,3 @@ namespace Desktop
         }
     }
 }
-
