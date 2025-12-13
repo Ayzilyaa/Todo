@@ -10,7 +10,7 @@ namespace Desktop
 {
     public static class CurrentUser
     {
-        public static string Name { get; set; } = "Пользователь";
+        public static string Name { get; set; } = "пользователь";
         public static string Login { get; set; }
         public static string Email { get; set; }
     }
