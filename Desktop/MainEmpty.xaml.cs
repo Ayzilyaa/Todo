@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Todo;
 
 namespace Desktop
 {
@@ -26,20 +27,28 @@ namespace Desktop
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            Создание_задачи createWindow = new Создание_задачи();
+            createWindow.Owner = this;
+            createWindow.ShowDialog();
 
+            if (createWindow.NewTask != null)
+            {
+                TaskManager.AllTasks.Add(createWindow.NewTask);
+                Main mainWindow = new Main();
+                mainWindow.Show();
+                this.Close();
+            }
         }
         private void Photo_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            MenuPanel.Visibility =
-            MenuPanel.Visibility == Visibility.Visible
-            ? Visibility.Collapsed
-            : Visibility.Visible;
+            Photo.ContextMenu.IsOpen = true;
         }
         private void Exit_Click(object sender, RoutedEventArgs e)
         {
-
+            MainWindow log = new MainWindow();
+            log.Show();
+            this.Close();
         }
-
         private void ChangeProfilePhoto_Click(object sender, RoutedEventArgs e)
         {
 
