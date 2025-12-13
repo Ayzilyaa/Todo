@@ -68,6 +68,9 @@
     <Compile Include="TaskItem.cs" />
     <Compile Include="TaskManager.cs" />
     <Compile Include="UserRepository.cs" />
+    <Compile Include="Историяя.xaml.cs">
+      <DependentUpon>Историяя.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Создание задачи.xaml.cs">
       <DependentUpon>Создание задачи.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Историяя.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
