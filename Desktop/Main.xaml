@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Desktop"
         mc:Ignorable="d"
-        Title="Main" Height="640" Width="800">
+        Title="Main" Height="640" Width="805">
     <Grid>
         <Button Content="Дом" HorizontalAlignment="Left" Margin="136,52,0,0" VerticalAlignment="Top" BorderBrush="White" Background="{x:Null}" Foreground="Green" FontSize="20" Click="DomButton_Click"/>
         <Button Content="Работа" HorizontalAlignment="Left" Margin="200,52,0,0" VerticalAlignment="Top" BorderBrush="White" Background="{x:Null}" Foreground="Red" FontSize="20" Click="RabotaButton_Click"/>
