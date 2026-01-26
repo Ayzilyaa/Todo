@@ -10,15 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Todo;
 
-namespace Desktop
+namespace Desktop.View
 {
     /// <summary>
     /// Логика взаимодействия для Main.xaml
     /// </summary>
-    public partial class Main : Window
+    public partial class Main : Page
     {
         public List<TaskItem> Tasks { get; set; }
         private string _currentCategory = "Дом";
@@ -38,20 +39,24 @@ namespace Desktop
         //кнопка +
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Создание_задачи createWindow = new Создание_задачи();
-            createWindow.Owner = this;
-            createWindow.ShowDialog();
+            var createPage = new Создание_задачи();
+            var currentPage = this;
 
-            if (createWindow.NewTask != null)
+            createPage.Unloaded += (s, args) =>
             {
-                TaskManager.AllTasks.Add(createWindow.NewTask);
-                if (_currentCategory == createWindow.NewTask.Category)
+                if (createPage.NewTask != null)
                 {
-                    FilterTasksByCategory(_currentCategory);
+                    TaskManager.AllTasks.Add(createPage.NewTask);
+
+                    if (_currentCategory == createPage.NewTask.Category)
+                    {
+                        FilterTasksByCategory(_currentCategory);
+                    }
+
                 }
 
-
-            }
+            };
+            NavigationService?.Navigate(createPage);
         }
         private void LoadActiveTasks()
         {
@@ -183,9 +188,13 @@ namespace Desktop
         }
         private void Выход_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow log = new MainWindow();
-            log.Show();
-            this.Close();
+            var window = Window.GetWindow(this) as LogIn;
+            if (window != null)
+            {
+                window.MainFrame.Visibility = Visibility.Collapsed;
+                window.LoginFormGrid.Visibility = Visibility.Visible;
+                window.MainFrame.Navigate(null);
+            }
 
         }
         private void СменаФото_Click(object sender, RoutedEventArgs e)
@@ -196,9 +205,7 @@ namespace Desktop
         //кнопка История
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Историяя history = new Историяя();
-            history.Show();
-            this.Close();
+            NavigationService?.Navigate(new Историяя());
 
         }
     }

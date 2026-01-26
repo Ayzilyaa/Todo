@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Desktop.View;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,24 +11,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static Desktop.Class;
 
 namespace Desktop
 {
-    public partial class MainWindow : Window
+    public partial class LogIn : Window
     {
         UserRepository UR = new UserRepository();
         Class validate = new Class();
 
-        public MainWindow()
+        public LogIn()
         {
             InitializeComponent();
             UR.UserRegistration("AYZILYA", "04052007", "ayzilya@gmail.com");
         }
 
-        private void LogIn(object sender, RoutedEventArgs e)
+        private void Login(object sender, RoutedEventArgs e)
         {
             string email = TBEmail.Text.Trim().ToLower();
             string password = TBPassword.Text.Trim();
@@ -48,9 +47,12 @@ namespace Desktop
             try
             {
                 var user = UR.UserAuthenticate(email, password);
-                MainEmpty main_Empty = new MainEmpty();
-                main_Empty.Show();
-                this.Close();
+                if (LoginFormGrid != null)
+                {
+                    LoginFormGrid.Visibility = Visibility.Collapsed;
+                }
+                MainFrame.Visibility = Visibility.Visible;
+                MainFrame.Navigate(new Main_Empty());
             }
             catch (Exception ex)
             {
@@ -61,9 +63,9 @@ namespace Desktop
 
         private void Registation(object sender, RoutedEventArgs e)
         {
-            Registration registration = new Registration();
-            registration.Show();
-            this.Close();
+            LoginFormGrid.Visibility = Visibility.Collapsed;
+            MainFrame.Visibility = Visibility.Visible;
+            MainFrame.Navigate(new Registration());
         }
 
         private void TBEmail_GotFocus(object sender, RoutedEventArgs e)
@@ -96,7 +98,8 @@ namespace Desktop
                 TBPassword.Text = "Пароль";
             }
         }
-        
+
     }
 }
+
 

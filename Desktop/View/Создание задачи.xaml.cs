@@ -10,15 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Todo;
 
-namespace Desktop
+namespace Desktop.View
 {
     /// <summary>
     /// Логика взаимодействия для Создание_задачи.xaml
     /// </summary>
-    public partial class Создание_задачи : Window
+    public partial class Создание_задачи : Page
     {
         public TaskItem NewTask { get; set; }
 
@@ -31,7 +32,6 @@ namespace Desktop
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             NewTask = null;
-            Close();
 
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,16 +43,17 @@ namespace Desktop
 
             NewTask = new TaskItem
             {
-                Title = Название.Text.Trim(),
-                Category = Категория.Text.Trim(),
-                Description = Описание.Text.Trim(),
-                Date = Дата.SelectedDate ?? DateTime.Today,
-                Time = time,
-                IsCompleted = false
-            };
-            this.Close();
+                    Title = Название.Text.Trim(),
+                    Category = Категория.Text.Trim(),
+                    Description = Описание.Text.Trim(),
+                    Date = Дата.SelectedDate ?? DateTime.Today,
+                    Time = time,
+                    IsCompleted = false
+                };
+                NavigationService?.Navigate(new Main());
 
 
-        }
+
+            }
     }
 }

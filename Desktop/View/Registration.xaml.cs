@@ -10,14 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Desktop
+namespace Desktop.View
 {
     /// <summary>
     /// Логика взаимодействия для Registration.xaml
     /// </summary>
-    public partial class Registration : Window
+    public partial class Registration : Page
     {
         UserRepository UR = new UserRepository();
         Class Validate = new Class();
@@ -61,9 +62,13 @@ namespace Desktop
 
         private void BackToLogIn(object sender, RoutedEventArgs e)
         {
-            var LogIn = new MainWindow();
-            LogIn.Show();
-            this.Close();
+            var window = Window.GetWindow(this) as LogIn;
+            if (window != null)
+            {
+                window.MainFrame.Visibility = Visibility.Collapsed;
+                window.LoginFormGrid.Visibility = Visibility.Visible;
+                window.MainFrame.Navigate(null);
+            }
 
         }
 
@@ -80,9 +85,10 @@ namespace Desktop
             else if (Повтор.Text == "повторите пароль") { MessageBox.Show("неверно введены данные"); }
             else if (UR.UserRegistration(login, password, email))
             {
-                MainEmpty main_Empty = new MainEmpty();
-                main_Empty.Show();
-                this.Close();
+                CurrentUser.Name = login;
+                CurrentUser.Login = login;
+                CurrentUser.Email = email;
+                NavigationService?.Navigate(new Main_Empty());
             }
             else
             {
@@ -113,4 +119,3 @@ namespace Desktop
         }
     }
 }
-

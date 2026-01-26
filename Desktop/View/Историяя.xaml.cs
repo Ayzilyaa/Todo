@@ -10,15 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Todo;
 
-namespace Desktop
+namespace Desktop.View
 {
     /// <summary>
     /// Логика взаимодействия для Историяя.xaml
     /// </summary>
-    public partial class Историяя : Window
+    public partial class Историяя : Page
     {
         private List<TaskItem> _completedTasks;
         public string UserName => CurrentUser.Name;
@@ -66,11 +67,9 @@ namespace Desktop
         //кнопка Задачи
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Main main = new Main();
-            main.Show();
-            this.Close();
+            NavigationService?.Navigate(new Main());
         }
-        
+
         private void СменаФото_Click(object sender, RoutedEventArgs e)
         {
 
@@ -93,10 +92,15 @@ namespace Desktop
         }
         private void Выход_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow log = new MainWindow();
-            log.Show();
-            this.Close();
+            var window = Window.GetWindow(this) as LogIn;
+            if (window != null)
+            {
+                window.MainFrame.Visibility = Visibility.Collapsed;
+                window.LoginFormGrid.Visibility = Visibility.Visible;
+                window.MainFrame.Navigate(null);
+            }
 
         }
     }
 }
+
