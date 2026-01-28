@@ -16,7 +16,7 @@
         <Label Content="Пароль" HorizontalAlignment="Left" Margin="315,241,0,0" VerticalAlignment="Top" FontSize="30" RenderTransformOrigin="0.552,2.51" Width="121"/>
         <TextBox x:Name="TBEmail" HorizontalAlignment="Left" Margin="320,199,0,0" TextWrapping="Wrap" Text="Почта" VerticalAlignment="Top" Width="362" FontSize="18" BorderThickness="0,0,0,1" Foreground="#FF928B8B" Height="30"/>
         <Image HorizontalAlignment="Left" Height="192" Margin="10,10,0,0" VerticalAlignment="Top" Width="210" Source="/logo.png"/>
-        <Button Content="Войти" HorizontalAlignment="Left" Margin="333,392,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="30" Width="349" Height="58" Foreground="#FFFEFEFE" Background="#FF0000" BorderBrush="White" Click="LogIn">
+        <Button Content="Войти" HorizontalAlignment="Left" Margin="333,392,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" FontSize="30" Width="349" Height="58" Foreground="#FFFEFEFE" Background="#FF0000" BorderBrush="White" Click="Login">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="14,14,4,4"/>
