@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Desktop.View"
       mc:Ignorable="d" 
-      d:DesignHeight="640" d:DesignWidth="800"
+      d:DesignHeight="640" d:DesignWidth="810"
       Title="Main">
     <Grid>
         <Button Content="Дом" HorizontalAlignment="Left" Margin="136,52,0,0" VerticalAlignment="Top" BorderBrush="White" Background="{x:Null}" Foreground="Green" FontSize="20" Click="DomButton_Click"/>
